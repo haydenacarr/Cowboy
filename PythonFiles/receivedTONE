@@ -1,0 +1,11 @@
+def on_received_number(receivedNumber):
+    basic.show_number(receivedNumber)
+    music.play(music.tone_playable(330, music.beat(BeatFraction.WHOLE)),
+        music.PlaybackMode.UNTIL_DONE)
+radio.on_received_number(on_received_number)
+
+radio.set_group(1)
+
+def on_forever():
+    pass
+basic.forever(on_forever)
